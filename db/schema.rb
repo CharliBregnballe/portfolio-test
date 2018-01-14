@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(version: 20180114111727) do
 
   create_table "technologies", force: :cascade do |t|
     t.string   "name"
-    t.integer  "portfolio_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["portfolio_id"], name: "index_technologies_on_portfolio_id"
+    t.integer  "portfoli_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["portfoli_id"], name: "index_technologies_on_portfoli_id"
   end
 
   create_table "topics", force: :cascade do |t|
