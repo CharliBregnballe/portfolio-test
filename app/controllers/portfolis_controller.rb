@@ -30,6 +30,7 @@ class PortfolisController < ApplicationController
 
   def edit
     @portfoli_item = Portfoli.find(params[:id])
+    3.times { @portfoli_item.technologies.build }
   end
 
   def update
