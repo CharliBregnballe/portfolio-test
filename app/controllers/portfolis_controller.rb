@@ -1,4 +1,5 @@
 class PortfolisController < ApplicationController
+  before_action :set_portolio_item, only: [:edit, :update, :show, :destroy]
   layout 'portfolio'
 
   def index
@@ -29,12 +30,11 @@ class PortfolisController < ApplicationController
   end
 
   def edit
-    @portfoli_item = Portfoli.find(params[:id])
     3.times { @portfoli_item.technologies.build }
   end
 
   def update
-    @portfoli_item = Portfoli.find(params[:id])
+
 
     respond_to do |format|
       if @portfoli_item.update(portfoli_params)
@@ -46,11 +46,10 @@ class PortfolisController < ApplicationController
   end
 
   def show
-    @portfoli_item = Portfoli.find(params[:id])
+
   end
 
   def destroy
-    @portfoli_item = Portfoli.find(params[:id])
     @portfoli_item.destroy
     respond_to do |format|
       format.html { redirect_to portfolis_url, notice: 'Portfoli was successfully destroyed.' }
@@ -66,6 +65,10 @@ class PortfolisController < ApplicationController
                                      :body,
                                      technologies_attributes: [:name]
                                     )
+  end
+
+  def set_portolio_item
+    @portfoli_item = Portfoli.find(params[:id])
   end
 
 end
