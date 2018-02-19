@@ -2,5 +2,5 @@
   <p><%= portfoli_item.subtitle %></p>
   <p><%= portfoli_item.body %></p>
   <%= image_tag portfoli_item.thumb_image unless portfoli_item.thumb_image.nil? %>
-  <%= link_to "Edit", edit_portfoli_path(portfoli_item) %>
-  <%= link_to "Delete Portfoli item", portfoli_path(portfoli_item), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to "Edit", edit_portfoli_path(portfoli_item) if logged_in?(:site_admin) %>
+  <%= link_to "Delete Portfoli item", portfoli_path(portfoli_item), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
