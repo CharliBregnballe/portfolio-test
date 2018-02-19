@@ -81,7 +81,7 @@ puts "9 potfoli items created"
 3.times do |technology|
   Technology.create!(
     name: "Technology #{technology}",
-    portfolio_id: Portfoli.last.id
+    portfoli_id: Portfoli.last.id
   )
 end
 
