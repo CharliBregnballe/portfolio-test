@@ -1,10 +1,17 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<main role="main" class="inner cover">
+  <h1 class="cover-heading">Page#contact.</h1>
+  <p class="lead">Find me in app/views/pages/contact.html.erb</p>
+  <p class="lead">
+    <%= link_to "About Me", about_path, class: 'btn btn-lg btn-secondary' %>
+  </p>
 
-<p><%= number_to_phone "5555555555" %></p>
 
-<p><%= number_to_currency "150" %></p>
+  <p><%= number_to_phone "5555555555" %></p>
 
-<p><%= number_to_percentage "80.4" %></p>
+  <p><%= number_to_currency "150" %></p>
 
-<p><%= number_with_delimiter "345343534" %></p>
+  <p><%= number_to_percentage "80.4" %></p>
+
+  <p><%= number_with_delimiter "345343534" %></p>
+
+</main>
