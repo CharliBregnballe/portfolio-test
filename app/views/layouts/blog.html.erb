@@ -15,17 +15,21 @@
 
   <body>
     <div class="container">
-
       <%= render 'shared/blog_nav' %>
+      
+        
       <%= render 'shared/blog_masthead' %>
+      <main role="main" class="container">
+        <div class="row">
+          <%= yield %>
 
-      <%= yield %>
+          <%= render 'shared/blog_sidebar' %>
+          <%= render 'shared/blog_footer' %>
 
-      <%= render 'shared/blog_sidebar' %>
-      <%= render 'shared/blog_footer' %>
-
-      <%= source_helper("blog") %>
-    </div><!-- end of container -->
+          <%= source_helper("blog") %>
+        </div><!-- end of row -->
+      </main>
+    </div>
   </body>
 </html>
 
