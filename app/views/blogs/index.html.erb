@@ -4,20 +4,14 @@
       <h3 class="pb-3 mb-4 font-italic border-bottom">
         Blog posts
       </h3>
+      <%= link_to "Write a new blog", new_blog_path %>
+      <%= paginate @blogs %>
 
       <%= render @blogs %>
 
-      <nav class="blog-pagination">
-        <a class="btn btn-outline-primary" href="#">Older</a>
-        <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-      </nav>
+      <%= paginate @blogs %>
 
     </div><!-- /.blog-main -->
   </div><!-- /.row -->
 
 </main><!-- /.container -->
-
-
-
-
-<%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin)  %>
