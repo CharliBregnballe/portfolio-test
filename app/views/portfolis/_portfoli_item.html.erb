@@ -1,6 +1,16 @@
-  <p><%= link_to portfoli_item.title, portfoli_show_path(portfoli_item) %></p>
-  <p><%= portfoli_item.subtitle %></p>
-  <p><%= portfoli_item.body %></p>
-  <%= image_tag portfoli_item.thumb_image unless portfoli_item.thumb_image.nil? %>
-  <%= link_to "Edit", edit_portfoli_path(portfoli_item) if logged_in?(:site_admin) %>
-  <%= link_to "Delete Portfoli item", portfoli_path(portfoli_item), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
+<div class="col-md-4">
+  <div class="card mb-4 box-shadow">
+    <%= image_tag portfoli_item.thumb_image unless portfoli_item.thumb_image.nil? %>
+    <div class="card-body">
+      <span><%= link_to portfoli_item.title, portfoli_show_path(portfoli_item) %></span>
+      <p class="card-text"><%= portfoli_item.subtitle %></p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+        </div>
+        <small class="text-muted">9 mins</small>
+      </div>
+    </div>
+  </div>
+</div>
