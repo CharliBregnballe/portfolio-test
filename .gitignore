@@ -22,3 +22,4 @@
 
 # I dont want secrets to be on github
 /config/secrets.yml
+.env
