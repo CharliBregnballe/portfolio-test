@@ -1,4 +1,11 @@
 <%= form_for(portfoli_item) do |f| %>
+
+  <% if portfoli_item.errors.any? %>
+    <% portfoli_item.errors.full_messages.each do |error| %>
+      <%= js add_gritter(error, title: "Charli", sticky: false) %>
+    <% end %>
+  <% end %>
+
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
